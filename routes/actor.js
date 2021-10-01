@@ -1,6 +1,12 @@
-var express = require('express');
-var router = express.Router();
+import { Router } from 'express';
+import { getAllActors, updateActor, getStreak } from '../controllers/actors';
 
-// Routes related to actor.
+const router = Router();
 
-module.exports = router;
+router.get('/', getAllActors);
+
+router.put('/', updateActor);
+
+router.get('/streak', getStreak);
+
+export default router;

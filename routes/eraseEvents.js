@@ -1,6 +1,8 @@
-var express = require('express');
-var router = express.Router();
+import { Router } from 'express';
+import { eraseEvents } from '../controllers/events';
 
-// Route related to delete events
+const router = Router();
 
-module.exports = router;
+router.delete('/', eraseEvents);
+
+export default router;

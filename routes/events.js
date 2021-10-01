@@ -1,7 +1,12 @@
-var express = require('express');
-var router = express.Router();
+import { Router } from 'express';
+import { getAllEvents, addEvent, getByActor } from '../controllers/events';
 
-// Routes related to event
+const router = Router();
 
+router.get('/', getAllEvents);
 
-module.exports = router;
+router.get('/actors/:actorId', getByActor);
+
+router.post('/', addEvent);
+
+export default router;
